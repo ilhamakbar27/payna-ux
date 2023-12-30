@@ -30,7 +30,7 @@ const Hero = () => {
           />
           <img
             className="absolute top-20 left-[27vw]"
-            src="Group 6.png"
+            src="../assets/Group 6.png"
             alt=""
           />
           <img
