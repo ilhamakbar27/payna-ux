@@ -1,5 +1,5 @@
 import heroImg from "../assets/image 3.png"
-
+import img2 from "../assets/Group 6.png"
 
 const Hero = () => {
   return (
@@ -30,7 +30,7 @@ const Hero = () => {
           />
           <img
             className="absolute top-20 left-[27vw]"
-            src="../assets/Group 6.png"
+            src={img2}
             alt=""
           />
           <img
