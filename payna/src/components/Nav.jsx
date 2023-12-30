@@ -11,7 +11,7 @@ const Nav = () => {
             <p className="text-3xl font-semibold">Payna</p>
           </div>
         </div>
-        <ul className="flex max-md:hidden justify-center text-lg items-center  gap-[60px] ">
+        <ul className="flex max-lg:hidden justify-center text-lg items-center  gap-[60px] ">
           <li className="font-semibold">Home</li>
           <li>Features</li>
           <li>Showcase</li>
