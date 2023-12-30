@@ -1,5 +1,7 @@
 import heroImg from "../assets/image 3.png"
 import img2 from "../assets/Group 6.png"
+import img3 from "../assets/Group 7.png"
+import img4 from "../assets/Group 14.png"
 
 const Hero = () => {
   return (
@@ -35,7 +37,7 @@ const Hero = () => {
           />
           <img
             className="absolute top-40 right-[37vw]"
-            src="Group 7.png"
+            src={img3}
             alt=""
           />
         </div>
@@ -43,7 +45,7 @@ const Hero = () => {
       <div className="flex px-20 max-md:px-5 max-lg:gap-8 font-semibold lg:gap-[200px] text-xl max-lg:flex-col md:justify-between">
         <p className="max-md:hidden">Trusted by Global Companies</p>
         <p className="md:hidden">Trusted by Global Companies</p>
-        <img className="flex h-full w-full  " src="Group 14.png" alt="" />
+        <img className="flex h-full w-full  " src={img4} alt="" />
       </div>
     </>
   );
