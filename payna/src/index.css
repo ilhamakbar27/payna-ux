@@ -7,3 +7,10 @@
   /* background: #E5E5E5; */
   font-family: 'Poppins', sans-serif;
 }
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+ 
+}

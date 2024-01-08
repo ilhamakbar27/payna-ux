@@ -1,5 +1,12 @@
-import Hero from "./components/Hero"
+import Hero2 from "./components/Hero2"
 import Nav from "./components/Nav"
+import Page from "./components/Page"
+import Hero3 from "./components/Hero3"
+import Swipertest from "./components/swiperTest"
+import Hero4 from "./components/Hero4"
+{/* <Hero2></Hero2> */}
+
+
 
 function App() {
   
@@ -7,7 +14,12 @@ function App() {
   return (
     <>
    <Nav/>
-   <Hero/>
+   <Page/>
+   <Hero2/>
+   <Hero3/>
+   <Hero4/>
+   <Swipertest/>
+   {/* <Hero/> */}
     </>
   )
 }
