@@ -43,7 +43,7 @@ const Page = () => {
             tellus at bibendum molestie sem. Sed turpis cras arcu pharetra,
             pharetra.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
-          <a href="#">
+          <a href="#products">
             <p className="text-md tracking-widest uppercase py-10 flex items-center gap-8 ">
               view products
               <Icon

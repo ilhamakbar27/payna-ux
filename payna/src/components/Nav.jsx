@@ -27,7 +27,11 @@ const Nav = () => {
             className="hover:text-white hover:scale-105 transition-all 3s">
             <li>Showcase</li>
           </a>
-          <li>Products</li>
+          <a
+            href="#products"
+            className="hover:text-white hover:scale-105 transition-all 3s">
+            <li>Products</li>
+          </a>
         </ul>
         <a href="#">
           <button className="bg-gray-100 max-md:hidden font-semibold hover:text-white hover:3s hover:scale-110 hover:transition-all  uppercase  hover:bg-black  tracking-wider rounded text-black px-8 py-2 ">
