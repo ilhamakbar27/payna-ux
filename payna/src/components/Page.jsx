@@ -1,7 +1,6 @@
 // import React from 'react'
 import { Icon } from "@iconify/react";
 import foto from "../assets/foto.png";
-// import foto from "../assets/S-1 1.png";
 import { TypeAnimation } from "react-type-animation";
 
 const Page = () => {

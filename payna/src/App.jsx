@@ -1,29 +1,31 @@
-import Hero2 from "./components/Hero2";
-import Nav from "./components/Nav";
-import Page from "./components/Page";
-import Hero3 from "./components/Hero3";
-import Swipertest from "./components/swiperTest";
-import Hero4 from "./components/Hero4";
+// import Nav from "./components/Nav";
+import { useState } from "react";
+import Loginpage from "./views/Loginpage";
 import Footer from "./components/Footer";
-import Products from "./components/Products";
-
-
-{
-  /* <Hero2></Hero2> */
-}
+import Nav from "./components/Nav";
+import Pages from "./views/Pages";
 
 function App() {
+  // const isLogin = false;
+  const [isLogin, setLogin] = useState(false);
+  // const [isHome, setHome] =useState(false);
+  const handleLogin = () => {
+    setLogin(true);
+  };
   return (
     <>
-      <Nav />
-      <Page />
-      <Hero2 />
-      <Hero3 />
-      <Hero4 />
-      <Swipertest />
-      <Products />
-      <Footer />
-      {/* <Hero/> */}
+      {isLogin ? (
+        <>
+          <Loginpage />
+        </>
+      ) : (
+        // Your code for rendering when isLogin is false
+        <>
+          <Nav login={isLogin} onLogin={handleLogin} />
+          <Pages />
+          <Footer />
+        </>
+      )}
     </>
   );
 }

@@ -1,4 +1,6 @@
-const Nav = () => {
+/* eslint-disable react/prop-types */
+
+const Nav = ({ onLogin }) => {
   return (
     <>
       <nav className="px-10  w-full z-50  bg-red-700 fixed max-md:px-5 py-5 flex justify-between ">
@@ -33,11 +35,12 @@ const Nav = () => {
             <li>Products</li>
           </a>
         </ul>
-        <a href="#">
-          <button className="bg-gray-100 max-md:hidden font-semibold hover:text-white hover:3s hover:scale-110 hover:transition-all  uppercase  hover:bg-black  tracking-wider rounded text-black px-8 py-2 ">
-            Sign in
-          </button>
-        </a>
+
+        <button
+          onClick={onLogin}
+          className="bg-gray-100 max-md:hidden font-semibold hover:text-white hover:3s hover:scale-110 hover:transition-all  uppercase  hover:bg-black  tracking-wider rounded text-black px-8 py-2 ">
+          Sign in
+        </button>
       </nav>
     </>
   );

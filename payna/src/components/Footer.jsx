@@ -2,7 +2,7 @@
 
 const Footer = () => {
   return (
-    <footer className="h-[100px] justify-between flex bg-red-700/90 px-12 items-center">
+    <footer className="h-[100px] py-10 justify-between bg-black text-white flex px-12 items-center">
       <p className="text-lg text-white">
         @ 2022 - TIMELESS / ALL RIGHTS RESERVED
       </p>

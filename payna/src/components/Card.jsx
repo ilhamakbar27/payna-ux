@@ -1,24 +1,30 @@
+/* eslint-disable react/prop-types */
 // import React from 'react'
 
-const Card = () => {
+// eslint-disable-next-line react/prop-types
+const Card = ({ product }) => {
   return (
     <>
+      {/* <a href="#prod"></a> */}
       <div className="hover:ease-out hover:scale-105 hover:transition-all duration-300 py-4">
-        <img
-          className="h-20vh   w-30vw object-cover"
-          src="https://i.pinimg.com/474x/47/0d/03/470d03b1168c3174b9f000d61a411ddc.jpg"
-          alt="Streetwear Product Image"
-        />
+        <a href="#id">
+          <img
+            className="h-full   w-full object-cover"
+            src={product.imgUrl}
+            alt="Streetwear Product Image"
+          />
+        </a>
+
         <div className="flex py-2 justify-between">
           <div className="flex flex-col gap-1">
             <h1 className="uppercase tracking-widest text-start text-xl ">
-              Baju bonge
+              {product.name}
             </h1>
-            <h4>Streetwear</h4>
+            <h4>{product.Category.name}</h4>
           </div>
           <div className="flex flex-col ">
-            <h3 className="text-2xl font-semibold pl-5">$100</h3>
-            {/* <h3 className="text-xl font-semibold pl-10">baju </h3> */}
+            <h3 className="text-xl font-semibold pl-5">Rp.{product.price}</h3>
+            <h3 className="text-lg  text-end"> Stock :{product.stock} </h3>
           </div>
         </div>
       </div>
