@@ -3,8 +3,8 @@ import Page from "../components/Page";
 import Hero3 from "../components/Hero3";
 import Swipertest from "../components/swiperTest";
 import Hero4 from "../components/Hero4";
-import Products from "../components/Products";
-import ShowProductById from "../components/showProductById";
+// import Products from "../components/Products";
+// import ShowProductById from "../components/showProductById";
 
 const Pages = () => {
   return (
@@ -14,8 +14,8 @@ const Pages = () => {
       <Hero3 />
       <Hero4 />
       <Swipertest />
-      <Products />
-      <ShowProductById />
+      {/* <Products /> */}
+      {/* <ShowProductById /> */}
     </>
   );
 };

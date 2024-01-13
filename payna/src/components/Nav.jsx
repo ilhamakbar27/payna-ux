@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 const Nav = ({ onLogin }) => {
   return (
     <>
@@ -14,26 +16,26 @@ const Nav = ({ onLogin }) => {
           </div>
         </div>
         <ul className="flex max-lg:hidden justify-center text-lg items-center  gap-[60px] ">
-          <a
-            href="#"
+          <Link
+            to={'/'}
             className="hover:text-white hover:scale-105 transition-all 3s">
             <li className="font-semibold">Home</li>
-          </a>
-          <a
-            href="#featured"
+          </Link>
+          <Link
+            to={'/featured'}
             className="hover:text-white hover:scale-105 transition-all 3s">
             <li>Features</li>
-          </a>
-          <a
-            href="#showcase"
+          </Link>
+          <Link
+            to={'/showcase'}
             className="hover:text-white hover:scale-105 transition-all 3s">
             <li>Showcase</li>
-          </a>
-          <a
-            href="#products"
+          </Link>
+          <Link
+            to={'/products'}
             className="hover:text-white hover:scale-105 transition-all 3s">
             <li>Products</li>
-          </a>
+          </Link>
         </ul>
 
         <button

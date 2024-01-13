@@ -3,15 +3,17 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import Button from "./Button";
 
 const ShowProductById = () => {
     const url = "https://phase2-aio.vercel.app";
     const [showProduct, setShowProduct] = useState({});
+    const {id} = useParams()
 
     async function fetchProduct() {
         try {
-            const {data} = await axios.get(`${url}/apis/pub/branded-things/products/10`)
+            const {data} = await axios.get(`${url}/apis/pub/branded-things/products/${id}`)
             setShowProduct(data.data)
         } catch (error) {
             console.log(error);
@@ -24,7 +26,7 @@ const ShowProductById = () => {
 
   return (
     <>
-      <section id="id" className="flex py-10 px-20 pb-32 justify-between " >
+      <section id="id" className="flex py-[200px] px-20 pb-32 justify-between " >
         <div className="w-3/5 flex flex-col">
             <img className="object-cover rounded-xl h-full w-4/6 " src={showProduct.imgUrl} alt="" />
             {/* <h1 className="text-5xl">{showProduct.imgUrl}</h1> */}

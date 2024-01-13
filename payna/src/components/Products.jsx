@@ -9,8 +9,11 @@ import Card from "./Card";
 const Products = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [showProducts, setShowProducts] = useState([]);
+  const [showcategories, setCategories] = useState([]);
   const [totalPage, setTotalPage] = useState(0);
-  const [search, setSearch] = useState("")
+  const [sort, setSort] = useState("ASC");
+  const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState("");
   const url = "https://phase2-aio.vercel.app";
 
   const goToPreviousPage = () => {
@@ -30,7 +33,7 @@ const Products = () => {
   async function fetchProducts() {
     try {
       const { data } = await axios.get(
-        `${url}/apis/pub/branded-things/products?q=${search}&i=&limit=10&page=${currentPage}&sort=ASC`
+        `${url}/apis/pub/branded-things/products?q=${search}&i=${filter}&limit=10&page=${currentPage}&sort=${sort}`
       );
       setShowProducts(data.data.query);
       setTotalPage(data.data.pagination.totalPage);
@@ -41,14 +44,34 @@ const Products = () => {
     }
   }
 
+  async function fetchCategories() {
+    try {
+      const { data } = await axios.get(
+        `${url}/apis/pub/branded-things/categories`
+      );
+      setCategories(data.data);
+      console.log(data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const handleSort = (e) => {
+    return setSort(e.target.value);
+  };
+
+  const handleFilter = (e) => {
+    return setFilter(e.target.value);
+  };
   useEffect(() => {
     console.log("ini proses mounted, hanya dijalankan 1x di awal");
     fetchProducts();
-  }, [currentPage,search]);
+    fetchCategories();
+  }, [currentPage, sort, search, filter]);
 
   return (
     <>
-      <section id="products" className="px-10  gap-5 flex flex-col py-12">
+      <section id="products" className="px-10  gap-5 flex flex-col py-24">
         <h1 className="   font-semibold tracking-[-10px] text-[140px]">
           Products
         </h1>
@@ -57,9 +80,10 @@ const Products = () => {
             <label
               className="my-5  relative bg-white min-w-sm max-w-full flex flex-col md:flex-row items-center justify-center border py-2 px-2 rounded-2xl gap-2 shadow-md focus-within:border-gray-300"
               htmlFor="search-bar">
-              <input onChange={(e)=> {
-                setSearch(e.target.value)
-              }}
+              <input
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                }}
                 id="search-bar"
                 placeholder="your keyword here"
                 className="px-6 py-2 w-full rounded-md flex-1 outline-none bg-white"
@@ -101,17 +125,27 @@ const Products = () => {
             <h1 className="uppercase tracking-[8px] font-semibold text-lg">
               filter by
             </h1>
-            <Button title={"category"} />
-            <Button title={"price"} />
-            <Button title={"type"} />
-            <Button title={"size"} />
+            <select
+              onChange={handleFilter}
+              className="appearance-none bg-white border border-gray-300 rounded-md py-2 px-4 pr-8 leading-tight focus:outline-none focus:border-black">
+              <option disabled selected value="" className="text-gray-500">
+                Select an option
+              </option>
+              {showcategories.map((category) => (
+                <>
+                  <option key={category.id} value={category.name}>
+                    {category.name}
+                  </option>
+                </>
+              ))}
+            </select>
           </div>
           <div className="flex justify-center items-center gap-3">
             <h1 className="uppercase tracking-[8px] font-semibold text-lg">
               sort by
             </h1>
-            <Button title={"date"} />
-            <Button title={"price"} />
+            <Button onSort={handleSort} title={"ASC"} />
+            <Button onSort={handleSort} title={"DESC"} />
           </div>
         </div>
         <div className=" grid gap-[80px] py-[20px] px-10 max-md:grid-cols-1 grid-cols-4">
@@ -138,8 +172,6 @@ const Products = () => {
           </button>
         </div>
       </div>
-     
-     
     </>
   );
 };

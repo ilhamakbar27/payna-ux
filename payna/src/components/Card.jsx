@@ -1,4 +1,7 @@
 /* eslint-disable react/prop-types */
+
+import { Link } from "react-router-dom";
+
 // import React from 'react'
 
 // eslint-disable-next-line react/prop-types
@@ -7,13 +10,13 @@ const Card = ({ product }) => {
     <>
       {/* <a href="#prod"></a> */}
       <div className="hover:ease-out hover:scale-105 hover:transition-all duration-300 py-4">
-        <a href="#id">
+        <Link to={`/products/${product.id}`} >
           <img
             className="h-full   w-full object-cover"
             src={product.imgUrl}
             alt="Streetwear Product Image"
           />
-        </a>
+        </Link>
 
         <div className="flex py-2 justify-between">
           <div className="flex flex-col gap-1">
